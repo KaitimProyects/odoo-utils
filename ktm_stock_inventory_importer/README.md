@@ -9,7 +9,7 @@ Only transient models, so there is no table to migrate or clean up:
 - `ktm.stock.inventory.importer.wizard`: holds the uploaded file (`file`, `filename`), the result (`state` draft/error/valid, `rows_checked`, `result_message`) and the `error_ids` One2many.
 - `ktm.stock.inventory.importer.error`: one record per problem, with the Excel `row_number`, the column (`field_name`), the row's name, internal reference, location and lot, and the `message`.
 - A form view opened as a dialog. After pressing Validate the same wizard reopens and lists every error. The "View Grouped Errors" button (shown only when there are errors) opens the errors in a new browser tab as a native list grouped by message, with collapsible groups and counts, so the wizard stays open. The tab URL is `/odoo/<wizard id>/action-ktm_stock_inventory_importer.ktm_stock_inventory_importer_error_action`; the action's domain reads the wizard id from `active_id`. The list is read only and can be regrouped by Column or filtered from the search box.
-- A window action and a menu, `Inventory > Operations > Adjustments > Validate Inventory File`, restricted to `stock.group_stock_manager` (it sits next to Physical Inventory). Model access is granted to `stock.group_stock_user`.
+- A window action and a menu, `Inventory > Operations > Adjustments > Validate Inventory File`, restricted to `stock.group_stock_manager` (it sits next to Physical Inventory). Model access is granted to `stock.group_stock_manager` only, so a plain inventory user cannot run the wizard through RPC either.
 
 The module only validates. It never writes to stock; a test asserts this.
 

@@ -3,8 +3,8 @@ from io import BytesIO
 
 from openpyxl import Workbook
 
-from odoo.exceptions import UserError
-from odoo.tests import TransactionCase, tagged
+from odoo.exceptions import AccessError, UserError
+from odoo.tests import TransactionCase, new_test_user, tagged
 from odoo.tools.safe_eval import safe_eval
 
 HEADERS = [
@@ -387,6 +387,22 @@ class TestInventoryImportWizard(TransactionCase):
         # column it squeezes the group name to a few letters in the list.
         Error = self.env['ktm.stock.inventory.importer.error']
         self.assertFalse(Error.fields_get(['row_number'])['row_number'].get('aggregator'))
+
+    def test_only_inventory_managers_can_use_it(self):
+        stock_user = new_test_user(
+            self.env, login='ktm_importer_stock_user',
+            groups='stock.group_stock_user')
+        stock_manager = new_test_user(
+            self.env, login='ktm_importer_stock_manager',
+            groups='stock.group_stock_manager')
+        Wizard = self.env['ktm.stock.inventory.importer.wizard']
+        Error = self.env['ktm.stock.inventory.importer.error']
+        with self.assertRaises(AccessError):
+            Wizard.with_user(stock_user).create({})
+        with self.assertRaises(AccessError):
+            Error.with_user(stock_user).search([])
+        self.assertTrue(Wizard.with_user(stock_manager).create({}))
+        Error.with_user(stock_manager).search([])
 
     def test_error_list_is_read_only(self):
         arch = self.env['ktm.stock.inventory.importer.error'].get_view(

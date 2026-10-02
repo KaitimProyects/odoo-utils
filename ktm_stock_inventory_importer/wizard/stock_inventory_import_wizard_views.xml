@@ -105,8 +105,8 @@
         <field name="context">{'dialog_size': 'extra-large'}</field>
     </record>
 
-    <!-- Manager only: it sits next to Physical Inventory, the manager's tool;
-         the model access stays at stock user level. -->
+    <!-- Manager only, like Physical Inventory next to it; the model access
+         rules restrict it to the same group. -->
     <menuitem id="ktm_stock_inventory_importer_menu"
               name="Validate Inventory File"
               parent="stock.menu_stock_adjustments"
