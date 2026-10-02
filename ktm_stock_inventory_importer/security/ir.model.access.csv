@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ktm_stock_inventory_importer_wizard_user,ktm.stock.inventory.importer.wizard user,model_ktm_stock_inventory_importer_wizard,stock.group_stock_user,1,1,1,1
+access_ktm_stock_inventory_importer_error_user,ktm.stock.inventory.importer.error user,model_ktm_stock_inventory_importer_error,stock.group_stock_user,1,1,1,1

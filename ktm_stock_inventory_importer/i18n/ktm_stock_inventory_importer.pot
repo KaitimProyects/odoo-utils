@@ -1,0 +1,349 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ktm_stock_inventory_importer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 14:28+0000\n"
+"PO-Revision-Date: 2026-10-02 14:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "%s error(s) found in the file."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid ""
+"A lot/serial number is required for a product tracked by lots or serial "
+"numbers."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model_terms:ir.ui.view,arch_db:ktm_stock_inventory_importer.ktm_stock_inventory_importer_wizard_view_form
+msgid "Close"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_error__field_name
+#: model_terms:ir.ui.view,arch_db:ktm_stock_inventory_importer.ktm_stock_inventory_importer_error_view_search
+msgid "Column"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_wizard__company_id
+msgid "Company"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "Counted Quantity"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "Counted quantity cannot be negative."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid ""
+"Counted quantity contains a comma; use a numeric cell or a period as decimal"
+" separator."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "Counted quantity is not a number."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "Counted quantity is required."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_error__create_uid
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_error__create_date
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_error__display_name
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields.selection,name:ktm_stock_inventory_importer.selection__ktm_stock_inventory_importer_wizard__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "Duplicate line: same product, location and lot as row(s) %s."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_wizard__error_ids
+msgid "Errors"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_wizard__file
+msgid "Excel File (.xlsx)"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model_terms:ir.ui.view,arch_db:ktm_stock_inventory_importer.ktm_stock_inventory_importer_wizard_view_form
+msgid ""
+"Expected columns (first row): Name, Internal Reference,\n"
+"                    Location, Lot/Serial (optional) and Counted Quantity.\n"
+"                    This only checks the file; no stock is changed."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_wizard__filename
+msgid "Filename"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model_terms:ir.ui.view,arch_db:ktm_stock_inventory_importer.ktm_stock_inventory_importer_error_view_search
+msgid "Group By"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "Header"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_error__id
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_error__product_code
+msgid "Internal Reference"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.actions.act_window,name:ktm_stock_inventory_importer.ktm_stock_inventory_importer_error_action
+msgid "Inventory File Errors"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_error__write_uid
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_error__write_date
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_error__location_name
+msgid "Location"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "Location is ambiguous: %s internal locations match."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "Location is not an internal location."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "Location is required."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "Location not found."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_error__lot_name
+msgid "Lot/Serial"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_error__message
+#: model_terms:ir.ui.view,arch_db:ktm_stock_inventory_importer.ktm_stock_inventory_importer_error_view_search
+msgid "Message"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "Missing required column(s): %s."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_error__product_name
+msgid "Name"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model,name:ktm_stock_inventory_importer.model_ktm_stock_inventory_importer_wizard
+msgid "Physical Inventory File Validation"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model,name:ktm_stock_inventory_importer.model_ktm_stock_inventory_importer_error
+msgid "Physical Inventory File Validation Error"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "Please upload an Excel file first."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "Product"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid ""
+"Product is ambiguous: %s products match the name and the internal reference."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "Product is not storable (Track Inventory is disabled)."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "Product name and internal reference are both required."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid ""
+"Product not found: no product matches both the name and the internal "
+"reference."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_wizard__result_message
+msgid "Result Message"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_error__row_number
+msgid "Row"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_wizard__rows_checked
+msgid "Rows Checked"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_wizard__state
+msgid "State"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "The file could not be read as an Excel (.xlsx) file: %s"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "The file is empty."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#. odoo-python
+#: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
+msgid "The file is valid: %s row(s) checked, no errors."
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields.selection,name:ktm_stock_inventory_importer.selection__ktm_stock_inventory_importer_wizard__state__valid
+msgid "Valid"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model_terms:ir.ui.view,arch_db:ktm_stock_inventory_importer.ktm_stock_inventory_importer_wizard_view_form
+msgid "Validate"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.actions.act_window,name:ktm_stock_inventory_importer.ktm_stock_inventory_importer_wizard_action
+#: model:ir.ui.menu,name:ktm_stock_inventory_importer.ktm_stock_inventory_importer_menu
+msgid "Validate Inventory File"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model_terms:ir.ui.view,arch_db:ktm_stock_inventory_importer.ktm_stock_inventory_importer_wizard_view_form
+msgid "Validate Physical Inventory File"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model_terms:ir.ui.view,arch_db:ktm_stock_inventory_importer.ktm_stock_inventory_importer_wizard_view_form
+msgid "View Grouped Errors"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields.selection,name:ktm_stock_inventory_importer.selection__ktm_stock_inventory_importer_wizard__state__error
+msgid "With Errors"
+msgstr ""
+
+#. module: ktm_stock_inventory_importer
+#: model:ir.model.fields,field_description:ktm_stock_inventory_importer.field_ktm_stock_inventory_importer_error__wizard_id
+msgid "Wizard"
+msgstr ""

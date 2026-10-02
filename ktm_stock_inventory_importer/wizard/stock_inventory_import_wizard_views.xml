@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ktm_stock_inventory_importer_wizard_view_form" model="ir.ui.view">
+        <field name="name">ktm.stock.inventory.importer.wizard.form</field>
+        <field name="model">ktm.stock.inventory.importer.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Validate Physical Inventory File">
+                <field name="state" invisible="1"/>
+                <field name="company_id" invisible="1"/>
+                <div class="alert alert-success" role="alert" invisible="state != 'valid'">
+                    <field name="result_message" nolabel="1"/>
+                </div>
+                <div class="alert alert-danger" role="alert" invisible="state != 'error'">
+                    <field name="result_message" nolabel="1"/>
+                </div>
+                <group>
+                    <group>
+                        <field name="file" filename="filename" required="1"/>
+                        <field name="filename" invisible="1"/>
+                    </group>
+                    <group invisible="state == 'draft'">
+                        <field name="rows_checked"/>
+                    </group>
+                </group>
+                <p class="text-muted" invisible="state != 'draft'">
+                    Expected columns (first row): Name, Internal Reference,
+                    Location, Lot/Serial (optional) and Counted Quantity.
+                    This only checks the file; no stock is changed.
+                </p>
+                <field name="error_ids" invisible="state != 'error'">
+                    <list>
+                        <field name="row_number"/>
+                        <field name="field_name"/>
+                        <field name="product_name"/>
+                        <field name="product_code"/>
+                        <field name="location_name"/>
+                        <field name="lot_name"/>
+                        <field name="message"/>
+                    </list>
+                </field>
+                <footer>
+                    <button string="Validate" name="action_validate" type="object"
+                            class="btn-primary" data-hotkey="q"/>
+                    <button string="View Grouped Errors" name="action_open_grouped_errors"
+                            type="object" invisible="state != 'error'"
+                            data-hotkey="g"/>
+                    <button string="Close" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="ktm_stock_inventory_importer_error_view_list" model="ir.ui.view">
+        <field name="name">ktm.stock.inventory.importer.error.list</field>
+        <field name="model">ktm.stock.inventory.importer.error</field>
+        <field name="arch" type="xml">
+            <list create="0" edit="0" delete="0">
+                <field name="row_number"/>
+                <field name="field_name"/>
+                <field name="product_name"/>
+                <field name="product_code"/>
+                <field name="location_name"/>
+                <field name="lot_name"/>
+                <field name="message"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="ktm_stock_inventory_importer_error_view_search" model="ir.ui.view">
+        <field name="name">ktm.stock.inventory.importer.error.search</field>
+        <field name="model">ktm.stock.inventory.importer.error</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="message"/>
+                <field name="product_name"/>
+                <field name="product_code"/>
+                <field name="location_name"/>
+                <field name="lot_name"/>
+                <group expand="0" string="Group By">
+                    <filter string="Message" name="group_by_message"
+                            context="{'group_by': 'message'}"/>
+                    <filter string="Column" name="group_by_field_name"
+                            context="{'group_by': 'field_name'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Opened in a new browser tab from the wizard: the URL carries the
+         wizard id as active_id (/odoo/<active_id>/action-<xmlid>). -->
+    <record id="ktm_stock_inventory_importer_error_action" model="ir.actions.act_window">
+        <field name="name">Inventory File Errors</field>
+        <field name="res_model">ktm.stock.inventory.importer.error</field>
+        <field name="view_mode">list</field>
+        <field name="search_view_id" ref="ktm_stock_inventory_importer_error_view_search"/>
+        <field name="domain">[('wizard_id', '=', active_id)]</field>
+        <field name="context">{'search_default_group_by_message': 1}</field>
+    </record>
+
+    <record id="ktm_stock_inventory_importer_wizard_action" model="ir.actions.act_window">
+        <field name="name">Validate Inventory File</field>
+        <field name="res_model">ktm.stock.inventory.importer.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'dialog_size': 'extra-large'}</field>
+    </record>
+
+    <!-- Manager only: it sits next to Physical Inventory, the manager's tool;
+         the model access stays at stock user level. -->
+    <menuitem id="ktm_stock_inventory_importer_menu"
+              name="Validate Inventory File"
+              parent="stock.menu_stock_adjustments"
+              action="ktm_stock_inventory_importer_wizard_action"
+              groups="stock.group_stock_manager"
+              sequence="20"/>
+</odoo>
