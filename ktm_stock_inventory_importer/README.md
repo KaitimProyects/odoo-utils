@@ -1,4 +1,4 @@
-# KTM Stock Inventory Importer
+# Stock Inventory Validator
 
 Validate a physical inventory Excel file before loading it.
 
@@ -58,6 +58,8 @@ Errors reported per Excel row:
 - Locations match on `complete_name` first and fall back to `name`. Only internal locations are accepted; a unique name that exists only as a non-internal location reports "not an internal location".
 - Records are searched for the wizard's company plus records with no company.
 
-## License
+## License and category
 
 LGPL-3, not the usual Kaitim OPL-1: the module is meant for a public utilities repository where others can use and contribute to it. The conventions lint reports this deviation on purpose; it has no exemption mechanism for a deliberate open licence.
+
+The category is `Inventory/Inventory`, the same as core `stock`, not the usual `Kaitim/Inventory`: the module is meant for the Odoo Apps Store, which only browses its own fixed category list, so a `Kaitim` category would leave the app unlisted. The conventions lint reports this deviation on purpose too.
