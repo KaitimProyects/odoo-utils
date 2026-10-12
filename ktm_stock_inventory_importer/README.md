@@ -62,4 +62,4 @@ Errors reported per Excel row:
 
 LGPL-3, not the usual Kaitim OPL-1: the module is meant for a public utilities repository where others can use and contribute to it. The conventions lint reports this deviation on purpose; it has no exemption mechanism for a deliberate open licence.
 
-The category is `Inventory/Inventory`, the same as core `stock`, not the usual `Kaitim/Inventory`: the module is meant for the Odoo Apps Store, which only browses its own fixed category list, so a `Kaitim` category would leave the app unlisted. The conventions lint reports this deviation on purpose too.
+The category is `Supply Chain/Inventory`, the same as core `stock` on this version: the Odoo Apps Store only browses core's own fixed category list, so a `Kaitim` category would leave the app unlisted.

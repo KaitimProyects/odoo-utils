@@ -1,4 +1,3 @@
-import base64
 import binascii
 from collections import defaultdict
 from io import BytesIO
@@ -57,7 +56,7 @@ class StockInventoryImportWizard(models.TransientModel):
         self.ensure_one()
         if not self.file:
             raise UserError(_("Please upload an Excel file first."))
-        rows, errors = self._parse_xlsx(base64.b64decode(self.file))
+        rows, errors = self._parse_xlsx(self.file.content)
         if not errors:
             errors = self._validate_rows(rows)
         errors.sort(key=lambda error: error['row_number'])

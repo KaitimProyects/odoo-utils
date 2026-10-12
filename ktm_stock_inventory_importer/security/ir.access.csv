@@ -1,0 +1,3 @@
+id,name,model_id,group_id/id,operation,domain
+access_ktm_stock_inventory_importer_wizard_manager,ktm.stock.inventory.importer.wizard manager,ktm.stock.inventory.importer.wizard,stock.group_stock_manager,crud,
+access_ktm_stock_inventory_importer_error_manager,ktm.stock.inventory.importer.error manager,ktm.stock.inventory.importer.error,stock.group_stock_manager,crud,

@@ -1,10 +1,10 @@
-import base64
 from io import BytesIO
 
 from openpyxl import Workbook
 
 from odoo.exceptions import AccessError, UserError
 from odoo.tests import TransactionCase, new_test_user, tagged
+from odoo.tools.binary import BinaryBytes
 from odoo.tools.safe_eval import safe_eval
 
 HEADERS = [
@@ -84,7 +84,7 @@ class TestInventoryImportWizard(TransactionCase):
 
     def _validate(self, rows, headers=HEADERS):
         wizard = self.env['ktm.stock.inventory.importer.wizard'].create({
-            'file': base64.b64encode(self._xlsx(rows, headers)),
+            'file': BinaryBytes(self._xlsx(rows, headers)),
             'filename': 'inventory.xlsx',
         })
         action = wizard.action_validate()
@@ -133,7 +133,7 @@ class TestInventoryImportWizard(TransactionCase):
 
     def test_unreadable_file(self):
         wizard = self.env['ktm.stock.inventory.importer.wizard'].create({
-            'file': base64.b64encode(b'this is not an xlsx'),
+            'file': BinaryBytes(b'this is not an xlsx'),
             'filename': 'broken.xlsx',
         })
         with self.assertRaises(UserError):
