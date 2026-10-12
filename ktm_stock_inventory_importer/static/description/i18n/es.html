@@ -3,16 +3,49 @@
         <img src="icon.png" alt="Stock Inventory Validator" width="56" height="56" class="rounded" />
         <div>
             <h1 class="h3 mb-1">Stock Inventory Validator</h1>
-            <p class="mb-0" style="opacity: .75;">Encuentre todos los errores de su archivo de inventario f&iacute;sico antes de que lleguen a su inventario</p>
+            <p class="mb-0" style="opacity: .75;">Encuentre todos los errores de su archivo de inventario físico antes de que lleguen a su inventario</p>
         </div>
     </div>
 
-    <p>Suba el archivo de Excel con el conteo de su inventario f&iacute;sico y obtenga, en la misma pantalla, la lista de todos los problemas encontrados, fila por fila. Corrija el archivo y vuelva a subirlo hasta que no tenga errores. Su inventario no se modifica mientras revisa.</p>
+    <p>El conteo de un inventario físico suele llegar en un archivo de Excel capturado por varias personas, y sus errores solo aparecen al cargarlo, uno por uno: una referencia mal escrita, un anaquel que no existe, un lote que nadie anotó. Este módulo revisa primero todo el archivo y muestra en una sola pantalla todos los problemas, fila por fila. Corrija el archivo, vuelva a subirlo y repita hasta que no tenga errores. Su inventario no se modifica mientras revisa.</p>
 
     <ul class="list-unstyled mt-4">
-        <li class="mb-2"><span class="text-success fw-bold">&#10003;</span> Vea todos los errores a la vez, con el n&uacute;mero de fila de Excel, en lugar de encontrarlos uno por uno</li>
-        <li class="mb-2"><span class="text-success fw-bold">&#10003;</span> Detecta l&iacute;neas duplicadas, productos desconocidos, lotes o n&uacute;meros de serie faltantes, ubicaciones incorrectas y cantidades no v&aacute;lidas</li>
-        <li class="mb-2"><span class="text-success fw-bold">&#10003;</span> Acepta encabezados de columna en ingl&eacute;s o en espa&ntilde;ol y nunca modifica su inventario</li>
+        <li class="mb-2"><span class="text-success fw-bold">&#10003;</span> Vea todos los errores a la vez, con el número de fila de Excel, en lugar de encontrarlos uno por uno</li>
+        <li class="mb-2"><span class="text-success fw-bold">&#10003;</span> Detecta líneas duplicadas, productos desconocidos, lotes o números de serie faltantes, ubicaciones incorrectas y cantidades no válidas</li>
+        <li class="mb-2"><span class="text-success fw-bold">&#10003;</span> Acepta encabezados de columna en inglés o en español y nunca modifica su inventario</li>
+    </ul>
+
+    <h2 class="h4 mt-5 mb-3">Cómo funciona</h2>
+
+    <h3 class="h5 mt-4">1. Ábralo junto a Inventario físico</h3>
+    <p>En Inventario, abra <strong>Operaciones &gt; Ajustes &gt; Validar archivo de inventario</strong>. Está justo debajo de Inventario físico y lo pueden usar los administradores de inventario.</p>
+    <img src="img/menu.png" alt="El menú Operaciones de Inventario, con Validar archivo de inventario debajo de Inventario físico" class="img-fluid border rounded mb-3" />
+
+    <h3 class="h5 mt-4">2. Suba su archivo de Excel</h3>
+    <p>El archivo necesita una fila de encabezados con las columnas Nombre, Referencia interna, Ubicación, Lote/Serie (opcional) y Cantidad contada. Súbalo y presione <strong>Validar</strong>.</p>
+    <img src="img/upload.png" alt="La ventana Validar archivo de inventario, con el botón para subir el archivo y las columnas esperadas" class="img-fluid border rounded mb-3" />
+
+    <h3 class="h5 mt-4">3. Revise todos los errores en una lista</h3>
+    <p>La misma ventana vuelve a abrirse con el número de filas revisadas y una línea por problema: la fila de Excel, la columna con el error, el producto y la ubicación escritos en esa fila, y qué está mal. Corrija el archivo y valide de nuevo, las veces que necesite.</p>
+    <img src="img/errors.png" alt="El resultado de la validación con diez errores, cada uno con su fila de Excel, su columna y su mensaje" class="img-fluid border rounded mb-3" />
+
+    <h3 class="h5 mt-4">4. Agrupe los errores para corregirlos por tipo</h3>
+    <p>Con un archivo largo, <strong>Ver errores agrupados</strong> abre los mismos errores en una nueva pestaña del navegador, agrupados por mensaje y con el total de cada grupo, para que la ventana en la que trabaja siga abierta. Un anaquel mal escrito en cincuenta filas se convierte en un solo grupo que se corrige de una vez.</p>
+    <img src="img/grouped_errors.png" alt="Los errores agrupados por mensaje, con el grupo de ubicación no encontrada abierto en tres filas" class="img-fluid border rounded mb-3" />
+
+    <h3 class="h5 mt-4">5. Cargue el archivo cuando ya no tenga errores</h3>
+    <p>Cuando todo está bien, la ventana lo indica junto con el número de filas revisadas. El archivo ya está listo para cargarse en su inventario físico.</p>
+    <img src="img/valid.png" alt="El resultado de la validación indica que el archivo es válido, con ocho filas revisadas" class="img-fluid border rounded mb-3" />
+
+    <h2 class="h4 mt-5 mb-3">Para tener en cuenta</h2>
+    <ul>
+        <li class="mb-2">Solo revisa el archivo. No carga el conteo en su inventario ni cambia ninguna cantidad; la carga es un paso aparte.</li>
+        <li class="mb-2">Solo se lee la primera hoja, y solo archivos de Excel (.xlsx). Las filas vacías se omiten y los encabezados de columna pueden estar en inglés o en español.</li>
+        <li class="mb-2">Un producto se encuentra solo cuando su nombre y su referencia interna coinciden con el mismo producto. Los productos y ubicaciones archivados no se encuentran.</li>
+        <li class="mb-2">Las ubicaciones pueden escribirse con su ruta completa (WH/Stock/Shelf 1) o solo con su nombre, y deben ser ubicaciones internas de existencias.</li>
+        <li class="mb-2">Una cantidad capturada como texto con coma, como 1,5 o 1,000, se rechaza a propósito, porque la coma puede leerse como decimal o como separador de miles. Use una celda numérica o un punto para los decimales.</li>
+        <li class="mb-2">Un producto con seguimiento por lotes o números de serie necesita uno en cada fila, salvo cuando su cantidad contada es 0.</li>
+        <li class="mb-2">Con varias empresas, el archivo se revisa contra los productos y ubicaciones de la empresa en la que trabaja, más los que comparten todas las empresas.</li>
     </ul>
 
     <p class="mt-4 small" style="opacity: .6;">Kaitim &middot; Odoo 18.0</p>

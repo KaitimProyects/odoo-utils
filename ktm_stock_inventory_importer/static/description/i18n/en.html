@@ -7,12 +7,45 @@
         </div>
     </div>
 
-    <p>Upload the Excel file with your physical inventory count and get, on the same screen, a list of every problem found, row by row. Fix the file once and upload it again until it comes back clean. Nothing in your stock is changed while you check.</p>
+    <p>A physical inventory count usually arrives as an Excel file typed by several people, and its mistakes only surface while it is being loaded, one at a time: a product code with a typo, a shelf that does not exist, a lot nobody wrote down. This module checks the whole file first and lists every problem, row by row, on one screen. Fix the file, upload it again, and repeat until it comes back clean. Nothing in your stock is changed while you check.</p>
 
     <ul class="list-unstyled mt-4">
         <li class="mb-2"><span class="text-success fw-bold">&#10003;</span> See all the errors at once, with the Excel row number, instead of finding them one at a time</li>
         <li class="mb-2"><span class="text-success fw-bold">&#10003;</span> Catches duplicated lines, unknown products, missing lots or serial numbers, wrong locations and invalid quantities</li>
         <li class="mb-2"><span class="text-success fw-bold">&#10003;</span> Works with column headers in English or Spanish, and never modifies your inventory</li>
+    </ul>
+
+    <h2 class="h4 mt-5 mb-3">How it works</h2>
+
+    <h3 class="h5 mt-4">1. Open it next to Physical Inventory</h3>
+    <p>In Inventory, open <strong>Operations &gt; Adjustments &gt; Validate Inventory File</strong>. It sits right under Physical Inventory and is available to inventory administrators.</p>
+    <img src="img/menu.png" alt="The Operations menu of Inventory, with Validate Inventory File under Physical Inventory" class="img-fluid border rounded mb-3" />
+
+    <h3 class="h5 mt-4">2. Upload your Excel file</h3>
+    <p>The file needs one header row with the columns Name, Internal Reference, Location, Lot/Serial (optional) and Counted Quantity. Upload it and press <strong>Validate</strong>.</p>
+    <img src="img/upload.png" alt="The Validate Inventory File window, with the upload button and the expected columns" class="img-fluid border rounded mb-3" />
+
+    <h3 class="h5 mt-4">3. Read every error in one list</h3>
+    <p>The same window comes back with how many rows were checked and one line per problem: the Excel row, the column at fault, the product and location written in that row, and what is wrong with it. Correct the file and validate again, as many times as you need.</p>
+    <img src="img/errors.png" alt="The validation result listing ten errors, each with its Excel row, column and message" class="img-fluid border rounded mb-3" />
+
+    <h3 class="h5 mt-4">4. Group the errors to fix them by kind</h3>
+    <p>With a long file, <strong>View Grouped Errors</strong> opens the same errors in a new browser tab, grouped by message with a count on each group, so the window you are working in stays open. A wrong shelf repeated on fifty rows becomes one group to fix in one go.</p>
+    <img src="img/grouped_errors.png" alt="The errors grouped by message, with the Location not found group expanded on three rows" class="img-fluid border rounded mb-3" />
+
+    <h3 class="h5 mt-4">5. Load the file once it comes back clean</h3>
+    <p>When nothing is wrong, the window says so and how many rows it checked. The file is now ready to be loaded into your physical inventory.</p>
+    <img src="img/valid.png" alt="The validation result saying the file is valid, with eight rows checked" class="img-fluid border rounded mb-3" />
+
+    <h2 class="h4 mt-5 mb-3">Good to know</h2>
+    <ul>
+        <li class="mb-2">It only checks the file. It does not load the count into your inventory or change any quantity; loading it is a separate step.</li>
+        <li class="mb-2">Only the first sheet is read, and only Excel files (.xlsx). Empty rows are skipped, and the column headers can be in English or in Spanish.</li>
+        <li class="mb-2">A product is found only when its name and internal reference both match the same product. Archived products and locations are not found.</li>
+        <li class="mb-2">Locations can be written as their full path (WH/Stock/Shelf 1) or by their name alone, and must be internal stock locations.</li>
+        <li class="mb-2">A quantity typed as text with a comma, such as 1,5 or 1,000, is rejected on purpose, because the comma can be read either as a decimal or as a thousands separator. Use a number cell or a period for decimals.</li>
+        <li class="mb-2">A product tracked by lots or serial numbers needs one on every row, except when its counted quantity is 0.</li>
+        <li class="mb-2">With several companies, the file is checked against the products and locations of the company you are working in, plus those shared by all companies.</li>
     </ul>
 
     <p class="mt-4 small" style="opacity: .6;">Kaitim &middot; Odoo 18.0</p>
