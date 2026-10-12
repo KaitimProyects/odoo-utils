@@ -375,9 +375,9 @@ class TestInventoryImportWizard(TransactionCase):
             ['Nope', 'N3', 'RF Shelf A', None, 1],
         ])
         domain = safe_eval(action.domain, {'active_id': wizard.id})
-        groups = self.env['ktm.stock.inventory.importer.error'].read_group(
-            domain, ['message'], ['message'])
-        counts = {g['message']: g['message_count'] for g in groups}
+        groups = self.env['ktm.stock.inventory.importer.error'] \
+            .formatted_read_group(domain, ['message'], ['__count'])
+        counts = {g['message']: g['__count'] for g in groups}
         self.assertEqual(len(counts), 2)
         self.assertEqual(
             sorted(counts.values(), reverse=True), [3, 1])

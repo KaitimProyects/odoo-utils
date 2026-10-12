@@ -76,7 +76,7 @@
                 <field name="product_code"/>
                 <field name="location_name"/>
                 <field name="lot_name"/>
-                <group expand="0" string="Group By">
+                <group>
                     <filter string="Message" name="group_by_message"
                             context="{'group_by': 'message'}"/>
                     <filter string="Column" name="group_by_field_name"

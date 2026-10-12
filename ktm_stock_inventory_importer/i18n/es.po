@@ -140,11 +140,6 @@ msgid "Filename"
 msgstr "Nombre del archivo"
 
 #. module: ktm_stock_inventory_importer
-#: model_terms:ir.ui.view,arch_db:ktm_stock_inventory_importer.ktm_stock_inventory_importer_error_view_search
-msgid "Group By"
-msgstr "Agrupar por"
-
-#. module: ktm_stock_inventory_importer
 #. odoo-python
 #: code:addons/ktm_stock_inventory_importer/wizard/stock_inventory_import_wizard.py:0
 msgid "Header"
